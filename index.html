@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Restaurant</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .registration-contents {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- header starts  -->
+        <header>
+            <div class="row">
+                <div class="col-lg-4 col-md-12">
+                    <div class="logo-div">
+                        <a href="#">
+                            <i class="logo fas fa-utensils fa-3x"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-12">
+                    <nav class="topnav" id="myTopnav">
+                        <ul>
+                            <li>
+                                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                                    <i class="fa fa-bars fa-2x"></i>
+                                </a>
+                            </li>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#about-us">About us</a></li>
+                            <li><a href="#menu-section">Food Menu</a></li>
+                            <li><a href="#contact-section">Contact</a></li>
+                            <li><a href="#registration-section">Register</a></li>
+                            <li><button onclick="showOrderList()">Order List</button></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <!-- header ends  -->
+        <!-- Registration section starts here -->
+        <section id="registration-section">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="registration-contents">
+                        <h3>Register</h3>
+                        <form id="registration-form">
+                            <div class="form-group">
+                                <label for="email">Enter Email:</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Enter Password:</label>
+                                <input type="password" id="password" name="password" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="re-password">Re-enter Password:</label>
+                                <input type="password" id="re-password" name="re-password" required>
+                            </div>
+                            <button type="submit">Register</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Registration section ends here -->
+
+        <!-- banner starts here  -->
+        <main>
+            <section id="banner-section">
+                <div class="banner-contents">
+                    <h1>ITALIAN RESTAURANT</h1>
+                    <p>Delizioso!</p>
+                    <button class="btn" id="orderButton">Order Now</button>
+                </div>
+            </section>
+
+            <section id="about-us">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="about-us-contents">
+                            <h3>About us</h3>
+                            <p>A Philippines based Italian Resto.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- banner ends here  -->
+
+            <!-- food menu starts here  -->
+            <section id="menu-section">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <img src="cacio2.jpg" alt="food1">
+                                <div class="item-desc">
+                                    <h3 class="item-name">Cacio e Pepe</h3>
+                                    <p>5,000 Pesos.</p>
+                                    <button onclick="addToCart('Cacio e Pepe', 5000)">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- about us section ends here  -->
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <img src="Parmesan Risotto.jpg" alt="food1">
+                                <div class="item-desc">
+                                    <h3 class="item-name">Parmesan Risotto</h3>
+                                    <p>5,000 Pesos</p>
+                                    <button onclick="addToCart('Parmesan Risotto', 5000)">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <img src="cheese2.jpg" alt="food1">
+                                <div class="item-desc">
+                                    <h3 class="item-name">Cheese Gnocchi</h3>
+                                    <p>BEST SELLER!</p>
+                                    <p>50.000 pesos</p>
+                                    <button onclick="addToCart('Cheese Gnocchi', 50000)">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <img src="tiramisu1.jpg" alt="food1">
+                                <div class="item-desc">
+                                    <h3 class="item-name">Tiramisu</h3>
+                                    <p>30.000 Pesos</p>
+                                    <button onclick="addToCart('Tiramisu', 30000)">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- food menu ends here  -->
+
+            <!-- Order List starts here  -->
+            <section id="order-section" style="text-align: center;">
+                <div id="orderList" class="order-list-container" style="display: none;">
+                    <h2>Order List</h2>
+                    <ul id="cartItems">
+                    </ul>
+                    <p>Total: <span id="totalPrice">0</span> Pesos</p>
+                    <div class="payment">
+                        <input type="number" id="paymentAmount" placeholder="Enter amount paid">
+                        <button onclick="calculateChange()">Calculate Change</button>
+                        <p id="changeAmount"></p>
+                    </div>
+                </div>
+            </section>
+            <!-- Order List ends here  -->
+
+            <!-- contact starts here  -->
+            <section id="contact-section">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <img src="logo2.jpg">
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="contact-details">
+                            <h3>Contact Details</h3> <br>
+
+                            <div>
+                                <h5>Italian Resto</h5>
+
+                            </div>
+
+                            <div>
+                                <h5>Phone : </h5>
+                                <p>+63912345678</p><br>
+                            </div>
+                            <div>
+                                <h5>Social Medias :</h5>
+                                <p>
+                                    Instagram : ItalianRestos <br>
+                                    Facebook : ItalianRestos
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- contact ends here  -->
+        </main>
+
+        <footer>
+            <div class="row">
+                <div class="col-lg-6">
+
+                </div>
+                <div class="col-lg-6">
+                    <div class="social-menus">
+                        <a href="#"><i class="icon-style fas fa-arrow-up"></i></a>
+                        <a href="#"><i class="icon-style fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="icon-style  fab fa-youtube"></i></a>
+                        <a href="#"><i class="icon-style  fab fa-twitter"></i></a>
+                        <a href="#"><i class="icon-style  fab fa-instagram"></i></a>
+
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
